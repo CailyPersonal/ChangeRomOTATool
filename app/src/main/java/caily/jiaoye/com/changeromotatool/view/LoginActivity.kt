@@ -23,6 +23,7 @@ import android.widget.TextView
 
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
+import android.view.Window
 import caily.jiaoye.com.changeromotatool.R
 
 import kotlinx.android.synthetic.main.activity_login.*
@@ -38,7 +39,10 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /*requestWindowFeature(Window.FEATURE_NO_TITLE)*/
         setContentView(R.layout.activity_login)
+
+
         // Set up the login form.
         populateAutoComplete()
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->

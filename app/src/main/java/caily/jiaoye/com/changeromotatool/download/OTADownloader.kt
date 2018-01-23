@@ -18,6 +18,9 @@ class OTADownloader(otaCard: OTACard, activity: Activity) {
 
     }
 
+    /**
+     * 使用系统的下载工具进行更新包下载
+     */
     private fun registry(downloadManager: DownloadManager, path: String, filename: String, uri: Uri): Long {
         val request = DownloadManager.Request(uri).apply {
             this.setDestinationInExternalPublicDir(path, filename)
@@ -29,4 +32,6 @@ class OTADownloader(otaCard: OTACard, activity: Activity) {
 
         return downloadManager.enqueue(request)
     }
+
+
 }
